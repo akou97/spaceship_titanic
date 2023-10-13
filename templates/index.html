@@ -1,0 +1,134 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Starship Titanic Project Powered by Kaggle</h1>
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1>
+            <legend>Prediction transported Passengers</legend>
+        </h1>
+
+        <div class="mb-3">
+            <label class="form-label">HomePlanet</label>
+            <select class="form-control" name="homePlanet" placeholder="Enter your homePlanet" required>
+                <option class="placeholder" selected disabled value="">Select your homePlanet</option>
+                
+                <option value="Europa">
+                    Europa
+                </option>
+                
+                <option value="Earth">
+                    Earth
+                </option>
+
+                <option value="Mars">
+                    Mars
+                </option>
+
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">cryoSleep</label>
+            <select class="form-control" name="cryoSleep" placeholder="Enter your cryoSleep" required>
+                <option class="placeholder" selected disabled value="">Select your cryoSleep</option>
+                
+                <option value="True">
+                    1
+                </option>
+                
+                <option value="False">
+                    0
+                </option>
+
+            </select>
+        </div>
+
+
+        <div class="mb-3">
+            <label class="form-label">destination</label>
+            <select class="form-control" name="destination" placeholder="Enter your destination" required>
+                <option class="placeholder" selected disabled value="">Select your destination</option>
+                
+                <option value='TRAPPIST-1e'>
+                    TRAPPIST-1e
+                </option>
+                
+                <option value='55 Cancri e'>
+                        55 Cancri e
+                </option>
+
+                <option value="PSO J318.5-22">
+                    PSO J318.5-22
+                </option>
+
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">vIP</label>
+            <select class="form-control" name="VIP" placeholder="Enter your VIP" required>
+                <option class="placeholder" selected disabled value="">Select your VIP</option>
+                
+                <option value="True">
+                    1
+                </option>
+                
+                <option value="False">
+                    0
+                </option>
+
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">cabin</label>
+            <input class="form-control" type="text" name="cabin"
+                placeholder="Enter your cabin as (X/YY/Z)"  />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Age</label>
+            <input class="form-control" type="number" name="age"
+                placeholder="Enter your age" min='0' max='80' />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Room service</label>
+            <input class="form-control" type="number" name="roomService"
+                placeholder="Enter your roomService fee in USD" min='0' max='15000' />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Food Court</label>
+            <input class="form-control" type="number" name="foodCourt"
+                placeholder="Enter your foodCourt fee in USD" min='0' max='30000' />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Shopping Mall</label>
+            <input class="form-control" type="number" name="shoppingMall"
+                placeholder="Enter your shoppingMall fee in USD" min='0' max='25000' />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Spa</label>
+            <input class="form-control" type="number" name="spa"
+                placeholder="Enter your Spa fee in USD" min='0' max='23000' />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">VRDeck</label>
+            <input class="form-control" type="number" name="vRDeck"
+                placeholder="Enter your VRDeck fee in USD" min='0' max='25000' />
+        </div>
+
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict" required />
+        </div>
+    </form>
+    <h2>
+       >> This passenger is transported (Yes : 1/ No : 0)? {{results}}
+    </h2>
+   <body>
+</html>
